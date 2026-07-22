@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jogo.css">
+    <script type="module" src="jogo.js"></script>
+    <title>JOKENPO</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.glitch.global/8ff313da-1dcc-45d6-8163-d9dda5d323f1/favicon-32x32.png?v=1744744460894">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+       <div class="box">
+        <h1 class="titulo">JO-KEN-PO</h1>
+        <p class="subTitulo"> ☻ 1986 PIXEL GAMES CO.</p>
+      </div>
+    </header>
+
+    <main>
+        <section class="box-jogo">
+            <div class="placar-jogador">
+                <h2>1P >> VOCE</h2>
+                <p id="placarJogador">00</p>
+                <p id="barraJogador">▬▬▬▬▬</p>
+            </div>
+            <p> X   </p>
+            <div class="placar-cpu">
+                <h2>2P >> CPU</h2>
+                <p id="placarCpu">00</p>
+                <p id="barraCpu">▬▬▬▬▬</p>
+            </div>            
+        </section>
+        <section class="box-jogo">
+            <div class="arena">
+            <p> PLAYER  ARENA  ENEMY</p>
+            <div class="arena-jogo">
+                <p alt="fechado1" >✊</p>
+                <p alt="fechado2">✊</p>
+            </div>
+        </section>
+       <!-- 🤚 ✊ ✌️ 👊 Ticker tape animado no topo estilo letreiro de arcade
+        Placar com barras de pixel — célula por célula em vez de uma barra contínua
+        Animações em steps() — movimento discreto e blocado, não suave
+        Paleta retrô — azul escuro (#0f0f23), amarelo arcade (#ffdd57), rosa player, ciano CPU
+        Textos de resultado no estilo ** VITORIA! ** com bordas coloridas pixeladas--> 
+    </main>
+    <footer>
+         <!-- Colocar moeda pulando ao clicar --> 
+        <p class="rodape-direitos">INSERT COIN TO CONTINUE</p>
+    </footer>
+
+</body>
+</html> 
