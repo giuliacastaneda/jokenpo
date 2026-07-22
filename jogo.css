@@ -1,11 +1,26 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #0f0f23;
+    background-image: radial-gradient(circle, #18183b, #030324);
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: "Press Start 2P", system-ui;
+}
+
+.scanlines::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(246, 243, 243, 0) 50%, 
+    rgba(73, 64, 64, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
 }
 
 .press-start-2p-regular {
@@ -32,28 +47,11 @@ p.subTitulo {
 .box {
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
+    margin-top: 1rem;
     background-color: #2a2a51;
     border: 8px solid #706487;
-    padding: 30px;
-    width: 350px;
-    box-shadow: 
-    inset 0 -7px 0 0 #0b0b31,
-    inset -7px 0 0 0 #0b0b31, 
-    inset 0 7px 0 0 #534a63, 
-    inset 7px 0 0 0 #534a63
-}
-
-.box-jogo {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 2rem;
-    background-color: #0f0f23;
-    border: 8px solid #706487;
-    font-size: 10px;
-    padding: 30px;
-    width: 500px;
+    padding: 10px;
+    width: 400px;
     box-shadow: 
     inset 0 -7px 0 0 #0b0b31,
     inset -7px 0 0 0 #0b0b31, 
@@ -69,27 +67,124 @@ p.subTitulo {
     color: #6bbdf0;
 }
 
-
-.arena {
-   word-spacing: 155px;
+.box-jogo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-items: center;
+    margin-top: 1rem;
+    background-color: #030324;
+    border: 8px solid #706487;
+    font-size: 10px;
     color: #938ea5;
+    padding: 15px;
+    width: 600px;
+    box-shadow: 
+    inset 0 -7px 0 0 #0b0b31,
+    inset -7px 0 0 0 #0b0b31, 
+    inset 0 7px 0 0 #534a63, 
+    inset 7px 0 0 0 #534a63;
 }
 
-.arena-jogo {
+#aberto1, #aberto2, #contador {
+    font-size: 10px; 
+        margin: 30px 30px 0px 0px;
+}
+
+#fechado1, #fechado2 {
+    font-size: 70px; 
+    
+}
+#resultado {
+    grid-column: 1 / 4;
+    margin-top: 20px;
+    font-size: 10px; 
+}
+.box-escolha {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: #938ea5;
-    font-size: 80px;
+    justify-content: center;
+    gap: 20px;
 }
 
+.botao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    background-color: #030324;
+    border: 8px solid #706487;
+    font-family: 'Press Start 2P', monospace;
+    color: #938ea5;
+    padding: 20px 25px;
+    box-shadow:
+    inset 0 -7px 0 0 #0b0b31,
+    inset -7px 0 0 0 #0b0b31,
+    inset 0 7px 0 0 #534a63,
+    inset 7px 0 0 0 #534a63;
+}
+
+.emoji {
+    font-size: 45px;
+}
+
+.texto {
+    margin-top: 12px;
+    font-size: 9px;
+}
+
+.botao:hover {
+    cursor: pointer;
+    transform: translateY(4px);
+}
+
+.botao:active {
+    transform: translateY(12px);
+    box-shadow:
+    inset 0 4px 0 #0b0b31;
+}
 
 footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     padding: 10px;
+    cursor: pointer;
     font-size: 10px; 
     color: #938ea5;
     text-align: center;
 }
+
+@import url('https://googleapis.com');
+
+.arcade-marquee {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #18183b;
+  border-top: 5px solid #706487;
+  border-bottom: 5px solid #706487;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.marquee-text {
+  display: inline-block;
+  padding-left: 100%;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: #ffdd57;
+  animation: desfilar 17s linear infinite;
+}
+
+@keyframes desfilar {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+

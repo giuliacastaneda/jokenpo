@@ -10,10 +10,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-</head>
-<body>
+</head> 
+<body class="scanlines">  
+   
+    <div class="arcade-marquee">
+        <div class="marquee-text">
+     *** JOKENPO ARCADE *** PEDRA • PAPEL • TESOURA *** INSERT COIN ***
+        </div>
+        </div>
     <header>
-       <div class="box">
+        <div class="box">
         <h1 class="titulo">JO-KEN-PO</h1>
         <p class="subTitulo"> ☻ 1986 PIXEL GAMES CO.</p>
       </div>
@@ -26,30 +32,60 @@
                 <p id="placarJogador">00</p>
                 <p id="barraJogador">▬▬▬▬▬</p>
             </div>
-            <p> X   </p>
+            <p> X </p>
             <div class="placar-cpu">
                 <h2>2P >> CPU</h2>
                 <p id="placarCpu">00</p>
                 <p id="barraCpu">▬▬▬▬▬</p>
             </div>            
         </section>
+
         <section class="box-jogo">
-            <div class="arena">
-            <p> PLAYER  ARENA  ENEMY</p>
-            <div class="arena-jogo">
-                <p alt="fechado1" >✊</p>
-                <p alt="fechado2">✊</p>
+            <div class="player">
+                 <p> PLAYER </p>
+                 <p id="fechado1" >✊ </p>
+                 <p id="aberto1"> ??? </p>
+            </div>
+            <div class="centro-jogo">
+                <br>
+                <p id="contador"> VS </p>
+            </div>
+            <div class="enemy">
+                    <p> ENEMY </p>
+                    <p id="fechado2">✊</p>
+                    <p id="aberto2"> ??? </p>
+            </div>
+            <div id="resultado"> 
+                ESCOLHA SUA JOGADA 
             </div>
         </section>
-       <!-- 🤚 ✊ ✌️ 👊 Ticker tape animado no topo estilo letreiro de arcade
-        Placar com barras de pixel — célula por célula em vez de uma barra contínua
+
+        <section class="box-escolha">
+            <button id="pedra" class="botao">
+                <span class="emoji">👊</span>
+                <span class="texto">PEDRA</span>
+            </button>
+
+            <button id="papel" class="botao">
+                <span class="emoji">✋</span>
+                <span class="texto">PAPEL</span>
+            </button>
+
+            <button id="tesoura" class="botao">
+                <span class="emoji">✌️</span>
+                <span class="texto">TESOURA</span>
+            </button>
+        </section>
+        <br>
+        <br>
+       <!-- 🤚 ✊ ✌️ 👊
         Animações em steps() — movimento discreto e blocado, não suave
-        Paleta retrô — azul escuro (#0f0f23), amarelo arcade (#ffdd57), rosa player, ciano CPU
-        Textos de resultado no estilo ** VITORIA! ** com bordas coloridas pixeladas--> 
+        ** VITORIA! ** com bordas amarelas == EMPATE! == cinza * CPU GANHOU * vermelho
+        contabilizar no placar js e alterar os resultados--> 
     </main>
     <footer>
          <!-- Colocar moeda pulando ao clicar --> 
-        <p class="rodape-direitos">INSERT COIN TO CONTINUE</p>
+        <p class="rodape">INSERT COIN TO CONTINUE</p>
     </footer>
 
 </body>
