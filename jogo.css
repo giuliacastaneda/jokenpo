@@ -188,3 +188,25 @@ footer {
   }
 }
 
+@keyframes chacoalhar {
+  0% { transform: translateX(15px); }
+  25% { transform: translateX(-15px); }
+  50% { transform: translateX(15px); }
+  75% { transform: translateX(-15px); }
+  100% { transform: translateX(15px); }
+}
+
+.shake {
+  animation: chacoalhar 0.3s ease-in-out infinite;
+}
+
+@keyframes pulso {
+  0% { transform: scale(2); opacity: 0; }
+  20% { transform: scale(1); opacity: 1; }
+  80% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0; }
+}
+
+.animar {
+  animation: pulso 1s ease-in-out forwards;
+}

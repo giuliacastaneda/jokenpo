@@ -5,6 +5,8 @@ const opcoes = ["pedra", "papel", "tesoura"];
 const indice = Math.floor(Math.random() * 3);
 const computador = opcoes[indice];
 
+
+
 function jogar(jogador, computador) {
   if (jogador === computador) {
     return "Empate!";
@@ -19,62 +21,79 @@ function jogar(jogador, computador) {
   }
 }
 
-console.log(`Jogador: ${jogador}`);
-console.log(`Computador: ${computador}`);
-console.log(jogar(jogador, computador));
+//////////////////////
 
-/* Desafio 1 ⭐
+const fechado1 = document.getElementById("fechado1");
+const aberto1 = document.getElementById("aberto1");
+const fechado2 = document.getElementById("fechado2");
+const aberto2 = document.getElementById("aberto2");
+const contador = document.getElementById("contador");
+const resultado = document.getElementById("resultado");
+const buttonPedra = document.getElementById("pedra");
+const buttonPapel = document.getElementById("papel");
+const buttonTesoura = document.getElementById("tesoura");
+let escolhaComputador = null;
+let contagem = 3;
+let escolhaJogador = null; 
 
-Em vez de escrever:
+const escolhas = {
+  pedra: {
+    emoji: "👊",
+    texto: "Pedra"
+  },
+  papel: {
+    emoji: "✋",
+    texto: "Papel"
+  },
+  tesoura: {
+    emoji: "✌️",
+    texto: "Tesoura"
+  }
+};
 
-const jogador = "pedra";
+function ativarChacoalho(e) {
 
-Peça para o usuário escolher usando prompt() (se estiver usando o navegador) ou a biblioteca readline (se estiver no Node.js).
+  const botaoClicado = e.currentTarget.id;
+  escolhaJogador = escolhas[botaoClicado];
 
-Desafio 2 ⭐⭐
+  const opcoes = Object.keys(escolhas);
+  const indice = Math.floor(Math.random() * opcoes.length);
 
-Validar a entrada.
+  escolhaComputador = escolhas[opcoes[indice]];
+  contagem = 3; 
 
-Se o jogador escrever:
+  fechado1.classList.add('shake');
+  fechado2.classList.add('shake');
+  
+  contador.textContent = contagem;
+  contador.classList.add('animar');
 
-banana
+  const intervalo = setInterval(() => {
+    contador.classList.remove('animar');
+    void contador.offsetWidth; 
+    contagem--;
 
-O programa deve responder:
+    if (contagem > 0) {
+      contador.textContent = contagem;
+      contador.classList.add('animar');
+    } else {
+      clearInterval(intervalo);
+      contador.textContent = "VS"; 
+      contador.classList.add('animar');}
 
-Opção inválida!
-Desafio 3 ⭐⭐⭐
+  setTimeout(() => {
+    fechado1.classList.remove('shake');
+    fechado2.classList.remove('shake');
+    
+    fechado1.textContent = escolhaJogador.emoji;
+    aberto1.textContent = escolhaJogador.texto;
+    aberto2.textContent = escolhaComputador.texto;
+    fechado2.textContent = escolhaComputador.emoji;
+    }, 1800)}, 1000);
 
-Criar uma função que escolha a jogada do computador:
-
-function escolhaComputador() {
-  // retorna pedra, papel ou tesoura
 }
 
-Assim seu código fica mais organizado.
+buttonPedra.addEventListener('click', ativarChacoalho);
+buttonPapel.addEventListener('click', ativarChacoalho);
+buttonTesoura.addEventListener('click', ativarChacoalho);
 
-Desafio 4 ⭐⭐⭐⭐
-
-Jogar melhor de 3.
-
-Exemplo:
-Rodada 1
-Jogador venceu!
-
-Placar:
-Jogador 1 x 0 Computador
-
-Rodada 2
-Computador venceu!
-
-Placar:
-Jogador 1 x 1 Computador
-
-Rodada 3
-Empate!
-
-Rodada 4
-Jogador venceu!
-
-Jogador campeão!
-
-Nesse desafio você vai praticar laços (while ou for), contadores e variáveis, que são conceitos muito importantes.*/
