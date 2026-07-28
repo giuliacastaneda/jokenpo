@@ -2,10 +2,10 @@
 
 ####  Um jogo de Pedra, Papel e Tesoura desenvolvido com HTML, CSS e JavaScript puro.
 
+Acesse por <a href='https://giuliacastaneda.github.io/Jokenpo/' target='_blank'>aqui.</a>
+
 <img src= 'img/home.png' alt='home'>
 
-<br>
-Acesse por <a href='https://giuliacastaneda.github.io/Jokenpo/' target='_blank'>aqui.</a>
 <br>
 
 ###  Funcionalidades

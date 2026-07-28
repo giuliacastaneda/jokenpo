@@ -122,6 +122,7 @@ function jogar() {
     jogarDnv.classList.add("escondido");
     zerarPlacar.classList.add("escondido");
     boxEscolhas.style.pointerEvents = "auto";
+    void boxEscolhas.offsetWidth;
  }
 
 function zerar() {
