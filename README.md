@@ -19,9 +19,9 @@ Acesse por <a href='http://giuliacastaneda.jokenpo/' target='_blank'>aqui.</a>
 - Interface responsiva
 
 ### Tecnologias
-- HTML5
-- CSS3
-- JavaScript
+- <img src= 'img/html.png' alt='home'> HTML5
+- <img src= 'img/css.png' alt='home'> CSS3
+- <img src= 'img/js.png' alt='home'> JavaScript
 
 ### Durante o desenvolvimento deste projeto pratiquei:
 
