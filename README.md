@@ -5,7 +5,7 @@
 <img src= 'img/home.png' alt='home'>
 
 <br>
-Acesse por <a href='http://giuliacastaneda.jokenpo/' target='_blank'>aqui.</a>
+Acesse por <a href='https://giuliacastaneda.github.io/Jokenpo/' target='_blank'>aqui.</a>
 <br>
 
 ###  Funcionalidades
