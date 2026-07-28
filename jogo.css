@@ -1,3 +1,5 @@
+@import url('https://googleapis.com');
+
 body {
     margin: 0;
     padding: 0;
@@ -43,6 +45,9 @@ p.subTitulo {
     text-align: center;
     color: #938ea5;
 }
+#player, #enemy{
+  padding-left: 35%;
+}
 
 .box {
     display: flex;
@@ -51,7 +56,7 @@ p.subTitulo {
     background-color: #2a2a51;
     border: 8px solid #706487;
     padding: 10px;
-    width: 400px;
+    width: 100%;
     box-shadow: 
     inset 0 -7px 0 0 #0b0b31,
     inset -7px 0 0 0 #0b0b31, 
@@ -70,7 +75,7 @@ p.subTitulo {
 .box-jogo {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     align-items: center;
     justify-items: center;
     margin-top: 1rem;
@@ -78,8 +83,8 @@ p.subTitulo {
     border: 8px solid #706487;
     font-size: 10px;
     color: #938ea5;
-    padding: 15px;
-    width: 600px;
+    padding: 10px;
+    width: 100%;
     box-shadow: 
     inset 0 -7px 0 0 #0b0b31,
     inset -7px 0 0 0 #0b0b31, 
@@ -89,22 +94,26 @@ p.subTitulo {
 
 #aberto1, #aberto2, #contador {
     font-size: 10px; 
-        margin: 30px 30px 0px 0px;
+    padding-left: 30%;
 }
 
 #fechado1, #fechado2 {
-    font-size: 70px; 
-    
+    font-size: 75px; 
+    margin: 20px;
 }
+
 #resultado {
     grid-column: 1 / 4;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 10px; 
 }
-.box-escolha {
+#box-escolha {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding-left: 4%;
 }
 
 .botao {
@@ -112,12 +121,12 @@ p.subTitulo {
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     background-color: #030324;
     border: 8px solid #706487;
     font-family: 'Press Start 2P', monospace;
     color: #938ea5;
-    padding: 20px 25px;
+    padding: 15px 20px;
     box-shadow:
     inset 0 -7px 0 0 #0b0b31,
     inset -7px 0 0 0 #0b0b31,
@@ -145,18 +154,61 @@ p.subTitulo {
     inset 0 4px 0 #0b0b31;
 }
 
+.escondido{
+  display:none;
+}
+
+#reset {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#jogar-novamente {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    background-color: #ffdd57;
+    border: 4px solid #030303;
+    font-family: 'Press Start 2P', monospace;
+    color: #000000;
+    padding: 10px 15px;
+}
+
+#jogar-novamente:hover {
+    cursor: pointer;
+    transform: translateY(4px);
+}
+
+#zerar-placar {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    background-color: #2a2a51;
+    border: 8px solid #706487;
+    font-family: 'Press Start 2P', monospace;
+    color: #938ea5;
+    padding: 10px 15px;
+    box-shadow:
+    inset 0 -7px 0 0 #0b0b31,
+    inset -7px 0 0 0 #0b0b31,
+    inset 0 7px 0 0 #534a63,
+    inset 7px 0 0 0 #534a63;
+}
+
+#zerar-placar:hover {
+    cursor: pointer;
+    transform: translateY(4px);
+}
+
 footer {
-    position: fixed;
+    position: static;
     bottom: 0;
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     cursor: pointer;
     font-size: 10px; 
     color: #938ea5;
     text-align: center;
 }
-
-@import url('https://googleapis.com');
 
 .arcade-marquee {
   width: 100%;
@@ -179,6 +231,61 @@ footer {
   animation: desfilar 17s linear infinite;
 }
 
+.shake {
+  animation: chacoalhar 0.3s ease-in-out infinite;
+}
+
+.animar {
+  animation: pulso 1s ease-in-out forwards;
+  color:#ffdd57;
+}
+
+.texto-pisca {
+  animation: piscar 0.8s infinite;
+}
+
+.vitoria {
+  color: #ffdd57;
+  font-size: 25px;
+  border: 3px solid #ffdd57;
+  padding: 12px ;
+  animation: surgirDoFundo 0.2s ease-out forwards;
+}
+
+.perda {
+  color: #d71b1b;
+  font-size: 25px;
+  border: 3px solid #d71b1b;
+  padding: 12px ;
+  animation: surgirDoFundo 0.2s ease-out forwards;
+}
+
+.empate{
+  color: #938ea5;
+  font-size: 25px;
+  border: 3px solid #938ea5;
+  padding: 12px ;
+  animation: surgirDoFundo 0.2s ease-out forwards;
+}
+
+#moeda-caindo {
+  width: 100px;
+  animation: cair 1.2s ease-out forwards;
+  animation-direction: reverse;
+  animation-iteration-count: 2;
+}
+
+@keyframes cair {
+  0% {
+    transform: translateY(-250px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @keyframes desfilar {
   0% {
     transform: translate(0, 0);
@@ -196,17 +303,82 @@ footer {
   100% { transform: translateX(15px); }
 }
 
-.shake {
-  animation: chacoalhar 0.3s ease-in-out infinite;
-}
-
 @keyframes pulso {
-  0% { transform: scale(2); opacity: 0; }
+  0% { transform: scale(4); opacity: 0; }
   20% { transform: scale(1); opacity: 1; }
   80% { transform: scale(1); opacity: 1; }
   100% { transform: scale(0.8); opacity: 0; }
 }
 
-.animar {
-  animation: pulso 1s ease-in-out forwards;
+@keyframes piscar {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes surgirDoFundo {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px){
+  header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  h1.titulo {
+    font-size: 27px;  
+  }
+  main {
+    width: 80%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.8rem;
+  }
+#box-escolha {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    justify-items: center;
+    margin-right: 5%;
+}
+.botao {
+    padding: 15px 20px;
+    }
+
+.emoji {
+    font-size: 29px;
+}
+
+.texto {
+    margin-top: 12px;
+    font-size: 8px;
+}
+
+#reset {
+  gap: 10px;
+  width:fit-content;
+}
+
+h3 {
+  font-size: 0.6rem;
+}
+
+#jogar-novamente, #zerar-placar {
+font-size: 0.6rem;
+border: 4px solid;
+}
+.arcade-marquee {
+  padding: 1px ;
+}
 }
